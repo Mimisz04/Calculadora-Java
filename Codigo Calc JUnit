@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+class Calculadora {
+
+    public static double somar(double a, double b) {
+        return a + b;
+    }
+
+    public static double subtrair(double a, double b) {
+        return a - b;
+    }
+
+    public static double multiplicar(double a, double b) {
+        return a * b;
+    }
+
+    public static double dividir(double a, double b) {
+        if (b == 0) {
+            throw new ArithmeticException("Divisão por zero não é permitida.");
+        }
+        return a / b;
+    }
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Informe o primeiro valor: ");
+        double n1 = entrada.nextDouble();
+
+        System.out.print("Informe o segundo valor: ");
+        double n2 = entrada.nextDouble();
+
+        System.out.println("###### SELECIONE UMA OPERAÇÃO ######");
+        System.out.println("[1] - SOMAR");
+        System.out.println("[2] - SUBTRAÇÃO");
+        System.out.println("[3] - MULTIPLICAR");
+        System.out.println("[4] - DIVIDIR");
+        System.out.print(">>>>>>>>>>>>>>>>>> Digite sua opção: ");
+        int op = entrada.nextInt();
+
+        switch (op) {
+            case 1:
+                System.out.println("A soma é: " + somar(n1, n2));
+                break;
+            case 2:
+                System.out.println("A subtração é: " + subtrair(n1, n2));
+                break;
+            case 3:
+                System.out.println("A multiplicação é: " + multiplicar(n1, n2));
+                break;
+            case 4:
+                try {
+                    System.out.println("A divisão é: " + dividir(n1, n2));
+                } catch (ArithmeticException e) {
+                    System.out.println("Erro: " + e.getMessage());
+                }
+                break;
+            default:
+                System.out.println("OPERAÇÃO INVÁLIDA!");
+        }
+
+        entrada.close();
+    }
+}
