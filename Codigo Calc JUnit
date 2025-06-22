@@ -1,3 +1,5 @@
+git checkout -b feature/calculadora
+
 import java.util.Scanner;
 
 class Calculadora {
