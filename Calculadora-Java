@@ -1,5 +1,7 @@
 git checkout -b feature/calculadora
 
+git commit -m "fix: tratamento de erro para divisão por zero usando ArithmeticException"
+
 package br.com.mnuprg.calculadora;
 
 import java.util.Scanner;
